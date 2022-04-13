@@ -14,12 +14,14 @@ class MovieCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+
     return Card(
       elevation: 10,
       color: Colors.grey[300],
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.23,
+        height: isPortrait ? MediaQuery.of(context).size.height * 0.23 : MediaQuery.of(context).size.height * 0.28,
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,7 +37,7 @@ class MovieCard extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               margin: const EdgeInsets.all(10),
               child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.55,
+                width: isPortrait ? MediaQuery.of(context).size.width * 0.55 : MediaQuery.of(context).size.height * 1.6,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -57,7 +59,7 @@ class MovieCard extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      height: MediaQuery.of(context).size.height * 0.07,
+                      height: isPortrait ? MediaQuery.of(context).size.height * 0.07: MediaQuery.of(context).size.height * 0.03,
                       margin: const EdgeInsets.only(top: 10.0),
                       child: SingleChildScrollView(
                         child: Text(
@@ -74,9 +76,6 @@ class MovieCard extends StatelessWidget {
                 ),
               ),
             ),
-            // Container(
-            //     width: MediaQuery.of(context).size.width * 0.1,
-            //     child: const Icon(Icons.favorite))
           ],
         ),
       ),

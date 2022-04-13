@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import './screens/tabs.dart';
 import './API/tmdbAPI.dart';
 
 Future<void> main() async{
+  // WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp,
+  //   DeviceOrientation.portraitDown,
+  // ]);
   await TmdbAPI.moviesInit();
   runApp(const MyApp());
 }

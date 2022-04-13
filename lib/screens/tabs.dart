@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../main.dart';
 import './home.dart';
 import './search.dart';
 
@@ -55,9 +54,6 @@ class _TabsState extends State<Tabs> {
         centerTitle: true,
       ),
       body: _screens[_currentIndex]['screen'] as Widget,
-      //     Text(
-      //   'work in progress',
-      // ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         unselectedItemColor: Colors.white,
@@ -73,10 +69,6 @@ class _TabsState extends State<Tabs> {
             icon: Icon(Icons.search),
             label: 'Search',
           ),
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.favorite),
-          //   label: 'Favorites',
-          // ),
         ],
       ),
     );
